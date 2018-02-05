@@ -139,5 +139,7 @@ function handleInput(clickData){
   placeholer.classList += ' animateFocusIn'
   return idInput;
 }
-document.addEventListener('click', handleInput(clickData));
-document.addEventListener('focus', handleInput(clickData));
+document.querySelectorAll('input').forEach(function(input){
+	input.addEventListener('click', handleInput); // details about the click will be passed automatically to the "handleInput" function 
+	input.addEventListener('focusin', handleInput); // same as upove
+})
