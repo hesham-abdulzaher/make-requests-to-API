@@ -1,10 +1,26 @@
+@keyframes animateToStratForm {
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1; } }
+@keyframes rotateLoading {
+  100% {
+    transform: rotate(360deg); } }
+@keyframes animateFocusIn {
+  100% {
+    transform: translateY(-20px);
+    font-size: 15px;
+    color: #999; } }
 * {
   box-sizing: border-box; }
 
 body {
   padding: 0;
   margin: 0;
-  background-color: #eee; }
+  background-color: #eee;
+  font-family: "Raleway", sans-serif; }
+
+.translateYLoading {
+  transform: translateY(-20%) !important; }
 
 #container {
   width: 90%;
@@ -22,5 +38,76 @@ body {
     background-color: white; }
     #container .card .info {
       line-height: 2; }
+
+#form {
+  width: 400px;
+  display: block;
+  padding: 30px;
+  margin: 50px auto;
+  border-radius: 2px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  background-color: white;
+  overflow: hidden;
+  transform: scale(0.6) translateY(80px);
+  opacity: 0;
+  animation: animateToStratForm 0.7s ease forwards; }
+  #form .loading {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #130f40;
+    margin: 0 auto;
+    transform: rotate(0);
+    animation: rotateLoading 1s ease-in-out infinite;
+    display: none; }
+    #form .loading span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #130f40;
+      width: 100%;
+      height: 100%; }
+      #form .loading span:nth-of-type(2) {
+        transform: rotate(30deg); }
+      #form .loading span:nth-of-type(3) {
+        transform: rotate(60deg); }
+  #form .placeholder {
+    width: 95%;
+    display: block;
+    margin: 25px auto;
+    position: relative; }
+    #form .placeholder span {
+      position: absolute;
+      top: 25%;
+      left: 0;
+      font-size: 18px;
+      font-weight: 400; }
+      #form .placeholder span.animateFocusIn {
+        animation: animateFocusIn 0.08s ease-in-out forwards; }
+    #form .placeholder input {
+      width: 100%;
+      margin: 0 auto;
+      padding: 10px 0;
+      border: none;
+      background-color: transparent;
+      position: relative;
+      z-index: 2;
+      border-bottom: 2px solid #130f40;
+      outline: none;
+      color: #130f40;
+      font-size: 18px; }
+  #form button {
+    display: block;
+    background-color: #130f40;
+    color: white;
+    border: none;
+    padding: 20px 30px;
+    margin: 40px auto 20px;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer; }
+    #form button:hover {
+      background-color: #0e0b2e; }
 
 /*# sourceMappingURL=style.css.map */

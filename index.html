@@ -11,6 +11,26 @@
 <body>
 
   <div id="container"></div>
+  <div id="form">
+    <div class="loading">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div id="placeholder" class="placeholder">
+      <span id="name-place">Name</span>
+      <input id="name" type="text" data-value="Name" onfocus="">
+    </div>
+    <div class="placeholder">
+      <span id="email-place">Email</span>
+      <input id="email" type="text" data-value="Email">
+    </div>
+    <div class="placeholder">
+      <span id="pass-place">Password</span>
+      <input id="pass" type="password" data-value="Password">
+    </div>
+    <button onclick="validation()">Sign in</button>
+  </div>
 
   <script src="./js/main.js"></script>
 </body>
