@@ -1,0 +1,179 @@
+#container
+  width: 90%
+  margin: auto
+  display: flex
+  flex-wrap: wrap
+  font-family: $raleway
+  .card
+    padding: 20px
+    width: 31%
+    border-radius: 3px
+    margin: 20px auto
+    margin-left: 0
+    box-shadow: $shadow
+    background-color: white
+    .info
+      line-height: 2
+
+#form
+  width: 400px
+  display: block
+  padding: 30px
+  padding-top: 20px
+  margin: 5% auto
+  border-radius: 2px
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+  background-color: white
+  overflow: hidden
+  // transform: scale(0.6) translateY(80px)
+  // opacity: 0
+  animation: fadeInForm .7s ease forwards
+  transition: 2s ease
+  position: relative
+  // display: none
+  #loading
+    transform: translateY(-100px)
+    opacity: 0
+    transition: .7s ease-out
+    // display: none
+    .loadingShape
+      margin: 0 auto
+      width: 20px
+      height: 20px
+      border-radius: 50%
+      animation: rotateLoading 1s ease-in-out infinite
+      span
+        position: absolute
+        top: 0
+        left: 0
+        background-color: $mainColor
+        width: 100%
+        height: 100%
+        &:nth-of-type(2)
+          transform: rotate(30deg)
+        &:nth-of-type(3)
+          transform: rotate(60deg)
+
+  .placeholder
+    width: 95%
+    display: block
+    margin: 20px auto
+    position: relative
+    .ion-alert
+      color: red
+      position: absolute
+      top: 10%
+      right: 0
+      font-size: 17px
+      opacity: 0
+      transform: translateY(30px)
+
+    span
+      position: absolute
+      top: 25%
+      left: 0
+      font-size: 18px
+      font-weight: 400
+      &.animateFocusIn
+        animation: animateFocusIn .08s ease-in-out forwards
+    input
+      width: 100%
+      margin: 0 auto
+      padding: 10px 0
+      border: none
+      background-color: transparent
+      position: relative
+      z-index: 2
+      border-bottom: 2px solid $mainColor
+      outline: none
+      color: black
+      font-size: 17px
+
+  button
+    display: block
+    background-color: $mainColor
+    color: white
+    border: none
+    padding: 20px 30px
+    margin: 40px auto 20px
+    font-size: 18px
+    text-transform: uppercase
+    letter-spacing: 1px
+    outline: none
+    cursor: pointer
+    transition: .4s ease
+    &:hover
+      background-color: $mainColor / 1.4
+    &:active
+      box-shadow: 2px 2px 20px #f2f2f2 inset, -2px -2px 20px #f2f2f2 inset
+
+
+/////////////////////////////////////
+// Warning section => this section will fadeIn if user did something wrong
+#warning
+  // display: none
+  position: absolute
+  top: 20%
+  right: 5%
+  max-width: 400px
+  font-size: 16px
+  display: inline-block
+  color: black
+  padding: 10px 20px
+  background-color: white
+  z-index: 2
+  border-radius: 10px
+  transform: rotate(90deg)
+  transform-origin: bottom right
+  opacity: 0
+  box-shadow: $formShadow
+  h2
+    font-weight: 400
+    text-transform: uppercase
+    color: $red
+  i
+    position: relative
+    color: $red
+    margin: 10px 20px
+    font-size: 20px
+    display: inline-block
+    animation: buzzIconWarning 2s ease infinite forwards
+    &::after
+      content: ''
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      width: 35px
+      height: 35px
+      border-radius: 50%
+      border: 2px dashed $red
+  p
+    display: block
+    margin: 10px 0
+
+
+// doneSubmit section => this section will fadeIn if every thing is ok
+#doneSubmit
+  text-align: center
+  position: absolute
+  top: 80%
+  left: 50%
+  transform: translateX(-50%)
+  background-color: white
+  color: $mainColor
+  padding: 20px
+  opacity: 0
+  h2
+    font-size: 22px
+    letter-spacing: 1px
+    span
+      font-weight: bold
+      text-transform: capitalize
+  a
+    font-size: 18px
+    text-decoration: none
+    color: $mainColor
+
+    &:hover
+      text-decoration: underline

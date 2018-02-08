@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>GetJson</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway" >
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <div id="warning">
+    <h2><span><i class="ion-alert"></i></span> Warning</h2>
+    <p># You Should be smarter than you are</p>
+    <p># You Should be smarter than you are</p>
+    <p># You Should be smarter than you are</p>
+  </div>
+
+  <div id="doneSubmit">
+    <h2>Welcome <span id="hisName"></span></h2>
+    <a href="./get-data.html">Click here to show data</a>
+  </div>
+
+  <div id="form">
+    <div id="loading">
+      <div class="loadingShape">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+
+    <div class="placeholder">
+      <span id="name-place">Name</span>
+      <input id="name" type="text">
+    </div>
+    <div class="placeholder">
+      <span id="email-place">Email</span>
+      <input id="email" type="text">
+    </div>
+    <div class="placeholder">
+      <span id="pass-place">Password</span>
+      <input id="pass" type="password">
+    </div>
+    <button onclick="getInputValue()">Sign in</button>
+  </div>
+
+  <script src="./js/post-data.js"></script>
+</body>
+</html>
