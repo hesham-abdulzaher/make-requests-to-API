@@ -1,3 +1,15 @@
+// Reset form when page load
+function resetForm(){
+  var form = document.getElementById('form');
+
+  let inputs = document.querySelectorAll('#form input')
+  for(let i = 0; i < inputs.length; i++){
+    inputs[i].value = ''
+  }
+}
+resetForm()
+
+
 // Animate when user click || focusIn || focusOut On any input
 function handleInput(eventDetails){
   var idInput = eventDetails.target.id
@@ -37,7 +49,7 @@ function validateUserAndPass(name, pass){
 
 
 // ************************* POST ****************************** //
-var form = document.getElementById('form')
+
 var warning = document.getElementById('warning')
 var doneSubmit = document.getElementById('doneSubmit')
 var hisName = document.getElementById('hisName')

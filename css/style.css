@@ -239,4 +239,8 @@ body {
     #doneSubmit a:hover {
       text-decoration: underline; }
 
+::selection {
+  background-color: rgba(19, 15, 64, 0.6);
+  color: #fff; }
+
 /*# sourceMappingURL=style.css.map */

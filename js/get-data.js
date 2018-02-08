@@ -26,7 +26,7 @@ fetch('https://bala7a-api.herokuapp.com/users/all') // Step #0
 
       infoDiv.innerHTML = "Name : " + finalData[i].name + "<br>"
       infoDiv.innerHTML += "Email : " + finalData[i].email + "<br>"
-      infoDiv.innerHTML += "Password : " + finalData[i].username + "<br>"
+      // infoDiv.innerHTML += "Password : " + finalData[i].password + "<br>"
 
     }
   })
