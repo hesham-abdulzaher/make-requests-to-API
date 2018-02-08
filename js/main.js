@@ -140,6 +140,10 @@ function handleInput(clickData){
   return idInput;
 }
 document.querySelectorAll('input').forEach(function(input){
+<<<<<<< HEAD
 	input.addEventListener('click', handleInput); // details about the click will be passed automatically to the "handleInput" function
+=======
+	input.addEventListener('click', handleInput); // details about the click will be passed automatically to the "handleInput" function 
+>>>>>>> d1837563af1baea19df4dd82a5015efabac21112
 	input.addEventListener('focusin', handleInput); // same as upove
 })
