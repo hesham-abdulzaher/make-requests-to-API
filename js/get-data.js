@@ -14,6 +14,7 @@ fetch('https://bala7a-api.herokuapp.com/users/all') // Step #0
     // Make logic
     // console.log(finalData.length)
     for(var i = 0; i < finalData.length; i++){
+      // console.log(finalData[i])
       // Creat Cards to display information about users
       var container = document.getElementById('container') // Get My container
       var card = document.createElement('div'); // Creat a new Div in container
@@ -26,7 +27,7 @@ fetch('https://bala7a-api.herokuapp.com/users/all') // Step #0
 
       infoDiv.innerHTML = "Name : " + finalData[i].name + "<br>"
       infoDiv.innerHTML += "Email : " + finalData[i].email + "<br>"
-      // infoDiv.innerHTML += "Password : " + finalData[i].password + "<br>"
+      infoDiv.innerHTML += "ID : " + finalData[i]._id + "<br>"
 
     }
   })
