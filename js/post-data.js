@@ -58,10 +58,6 @@ function getInputValue(){
   var nameVal = document.getElementById('name').value
   var emailVal = document.getElementById('email').value
   var passVal = document.getElementById('pass').value
-  // console.log(form);
-
-  // Why this function not working
-  // form.reset();
 
   // if any input has syntax isn't good please stop this function and fade warning section
   if(validateUserAndPass(nameVal, passVal) == false || validateEmail(emailVal) == false){
