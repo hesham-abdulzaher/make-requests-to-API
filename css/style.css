@@ -60,6 +60,14 @@
   100% {
     transform: translateY(-40vh) translateX(-50%);
     opacity: 1; } }
+@keyframes fadeInContentMsg {
+  100% {
+    top: 50%;
+    opacity: 1; } }
+@keyframes fadeOutContentMsg {
+  100% {
+    top: 60%;
+    opacity: 0; } }
 * {
   box-sizing: border-box; }
 
@@ -73,22 +81,13 @@ body {
 .translateYLoading {
   transform: translateY(-20%) !important; }
 
-#container {
-  width: 90%;
-  margin: auto;
+.flex {
   display: flex;
-  flex-wrap: wrap;
-  font-family: "Raleway", sans-serif; }
-  #container .card {
-    padding: 20px;
-    width: 31%;
-    border-radius: 3px;
-    margin: 20px auto;
-    margin-left: 0;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-    background-color: white; }
-    #container .card .info {
-      line-height: 2; }
+  flex-wrap: wrap; }
+
+.fadeContentMSG {
+  top: 50%;
+  opacity: 1; }
 
 #form {
   width: 400px;
@@ -106,7 +105,8 @@ body {
   #form #loading {
     transform: translateY(-100px);
     opacity: 0;
-    transition: 0.7s ease-out; }
+    transition: 0.7s ease-out;
+    display: none; }
     #form #loading .loadingShape {
       margin: 0 auto;
       width: 20px;
@@ -179,7 +179,7 @@ body {
   position: absolute;
   top: 20%;
   right: 5%;
-  max-width: 400px;
+  max-width: 350px;
   font-size: 16px;
   display: inline-block;
   color: black;
@@ -195,25 +195,31 @@ body {
     font-weight: 400;
     text-transform: uppercase;
     color: #EA2027; }
-  #warning i {
-    position: relative;
-    color: #EA2027;
-    margin: 10px 20px;
-    font-size: 20px;
-    display: inline-block;
-    animation: buzzIconWarning 2s ease infinite forwards; }
-    #warning i::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 35px;
-      height: 35px;
-      border-radius: 50%;
-      border: 2px dashed #EA2027; }
-  #warning p {
+    #warning h2 i.ion-alert {
+      position: relative;
+      color: #EA2027;
+      margin: 10px 20px;
+      font-size: 20px;
+      display: inline-block;
+      animation: buzzIconWarning 2s ease infinite forwards; }
+      #warning h2 i.ion-alert::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        border: 2px dashed #EA2027; }
+  #warning h3 {
     display: block;
+    margin: 10px 0; }
+  #warning div span {
+    width: 8%;
+    margin: 10px 0; }
+  #warning div p {
+    width: 90%;
     margin: 10px 0; }
 
 #doneSubmit {
@@ -242,5 +248,72 @@ body {
 ::selection {
   background-color: rgba(19, 15, 64, 0.6);
   color: #fff; }
+
+#container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: "Raleway", sans-serif; }
+  #container .card {
+    padding: 20px;
+    width: 31%;
+    border-radius: 3px;
+    margin: 20px auto;
+    margin-left: 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    background-color: white;
+    position: relative; }
+    #container .card .info {
+      line-height: 2; }
+    #container .card .deleteIcon {
+      position: absolute;
+      top: 15%;
+      right: 5%;
+      cursor: pointer;
+      color: #130f40;
+      transition: 0.2s ease;
+      font-size: 30px; }
+      #container .card .deleteIcon:hover {
+        animation: buzzIconWarning 2s ease forwards; }
+  #container #popup {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 2;
+    display: none; }
+    #container #popup #content {
+      display: inline-block;
+      position: fixed;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      background-color: white;
+      padding: 30px;
+      border-radius: 4px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
+      #container #popup #content p {
+        margin: 0 auto;
+        font-size: 20px; }
+      #container #popup #content button {
+        padding: 10px 20px;
+        width: 40%;
+        margin: 25px 4% 10px;
+        border-radius: 3px;
+        cursor: pointer;
+        outline: none;
+        background-color: #130f40;
+        color: white;
+        font-size: 17px;
+        font-weight: 400;
+        letter-spacing: 1px;
+        border: none;
+        transition: 0.3s ease; }
+        #container #popup #content button:hover {
+          background-color: #0a0820; }
 
 /*# sourceMappingURL=style.css.map */

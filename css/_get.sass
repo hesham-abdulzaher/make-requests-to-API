@@ -1,0 +1,71 @@
+#container
+  width: 90%
+  margin: auto
+  display: flex
+  flex-wrap: wrap
+  font-family: $raleway
+  .card
+    padding: 20px
+    width: 31%
+    border-radius: 3px
+    margin: 20px auto
+    margin-left: 0
+    box-shadow: $shadow
+    background-color: white
+    position: relative
+    .info
+      line-height: 2
+    .deleteIcon
+      position: absolute
+      top: 15%
+      right: 5%
+      cursor: pointer
+      color: $mainColor
+      transition: .2s ease
+      font-size: 30px
+      &:hover
+        animation: buzzIconWarning 2s ease forwards
+
+  #popup
+    position: fixed
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    background-color: rgba(0, 0, 0, .8)
+    z-index: 2
+    display: none
+    // &:hover
+    //   .content
+    //     top: 50%
+    //     opacity: 1
+    #content
+      display: inline-block
+      position: fixed
+      top: 60%
+      left: 50%
+      transform: translate(-50%, -50%)
+      opacity: 0
+      background-color: white
+      padding: 30px
+      border-radius: 4px
+      box-shadow: $shadow
+      p
+        margin: 0 auto
+        font-size: 20px
+      button
+        padding: 10px 20px
+        width: 40%
+        margin: 25px 4% 10px
+        border-radius: 3px
+        cursor: pointer
+        outline: none
+        background-color: $mainColor
+        color: white
+        font-size: 17px
+        font-weight: 400
+        letter-spacing: 1px
+        border: none
+        transition: .3s ease
+        &:hover
+          background-color: $mainColor / 2
