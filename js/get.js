@@ -1,3 +1,4 @@
+// ********************** GET ************************//
 fetch('https://bala7a-api.herokuapp.com/users/all') // Step #0
   .then(function(response){ // Step #1
     return response.json()
@@ -40,4 +41,3 @@ fetch('https://bala7a-api.herokuapp.com/users/all') // Step #0
     alert('something went worng!!!!')
     console.log(errorMessage);
   })
-// ********************** GET ************************//

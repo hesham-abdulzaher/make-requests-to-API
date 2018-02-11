@@ -11,29 +11,6 @@
   animation: fadeInForm .7s ease forwards
   transition: 2s ease
   position: relative
-  #loading
-    transform: translateY(-100px)
-    opacity: 0
-    transition: .7s ease-out
-    display: none
-    .loadingShape
-      margin: 0 auto
-      width: 20px
-      height: 20px
-      border-radius: 50%
-      animation: rotateLoading 1s ease-in-out infinite
-      span
-        position: absolute
-        top: 0
-        left: 0
-        background-color: $mainColor
-        width: 100%
-        height: 100%
-        &:nth-of-type(2)
-          transform: rotate(30deg)
-        &:nth-of-type(3)
-          transform: rotate(60deg)
-
   .placeholder
     width: 95%
     display: block

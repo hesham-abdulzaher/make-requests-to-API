@@ -18,6 +18,10 @@ function deleteData(id) {
       popup.style.display = 'none'
       return;
     }else{
+      popup.style.display = 'none'
+      var loading = document.getElementById('load-layer')
+      console.log(loading);
+      loading.style.display = 'block'
       fetch('https://bala7a-api.herokuapp.com/users/delete' + '/' + id, {
         method: 'delete'
       })
@@ -30,10 +34,9 @@ function deleteData(id) {
       .catch(function(errorMessage){
         console.log(errorMessage);
       })
-      popup.style.display = 'none'
       setTimeout(function(){
         location.reload();
-      }, 500)
+      }, 2000)
     }
   }
 

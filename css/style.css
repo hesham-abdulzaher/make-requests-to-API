@@ -102,28 +102,6 @@ body {
   animation: fadeInForm 0.7s ease forwards;
   transition: 2s ease;
   position: relative; }
-  #form #loading {
-    transform: translateY(-100px);
-    opacity: 0;
-    transition: 0.7s ease-out;
-    display: none; }
-    #form #loading .loadingShape {
-      margin: 0 auto;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      animation: rotateLoading 1s ease-in-out infinite; }
-      #form #loading .loadingShape span {
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: #130f40;
-        width: 100%;
-        height: 100%; }
-        #form #loading .loadingShape span:nth-of-type(2) {
-          transform: rotate(30deg); }
-        #form #loading .loadingShape span:nth-of-type(3) {
-          transform: rotate(60deg); }
   #form .placeholder {
     width: 95%;
     display: block;
@@ -315,5 +293,73 @@ body {
         transition: 0.3s ease; }
         #container #popup #content button:hover {
           background-color: #0a0820; }
+
+#load-layer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 3;
+  display: none; }
+  #load-layer #loading {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: 100px auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotate 1s linear infinite forwards; }
+    #load-layer #loading span {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      position: absolute; }
+      #load-layer #loading span::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        transform: translateX(-50%);
+        border: 1px solid #000;
+        width: 3px;
+        height: 10px;
+        background-color: white; }
+    #load-layer #loading span:nth-of-type(2) {
+      transform: rotate(30deg); }
+    #load-layer #loading span:nth-of-type(3) {
+      transform: rotate(60deg); }
+    #load-layer #loading span:nth-of-type(4) {
+      transform: rotate(90deg); }
+    #load-layer #loading span:nth-of-type(5) {
+      transform: rotate(120deg); }
+    #load-layer #loading span:nth-of-type(6) {
+      transform: rotate(150deg); }
+    #load-layer #loading span:nth-of-type(7) {
+      transform: rotate(180deg); }
+    #load-layer #loading span:nth-of-type(8) {
+      transform: rotate(210deg); }
+    #load-layer #loading span:nth-of-type(9) {
+      transform: rotate(240deg); }
+    #load-layer #loading span:nth-of-type(10) {
+      transform: rotate(270deg); }
+    #load-layer #loading span:nth-of-type(11) {
+      transform: rotate(300deg); }
+    #load-layer #loading span:last-of-type {
+      transform: rotate(330deg); }
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0) scale(1);
+    top: 40%; }
+  50% {
+    transform: rotate(180deg) scale(1.3);
+    top: 40%; }
+  100% {
+    transform: rotate(360deg) scale(1);
+    top: 40%; } }
 
 /*# sourceMappingURL=style.css.map */

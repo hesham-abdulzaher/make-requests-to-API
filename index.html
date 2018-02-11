@@ -11,6 +11,10 @@
 </head>
 <body>
 
+  <div id="load-layer">
+    <div id="loading"></div>
+  </div>
+
   <div id="warning">
     <h2><span><i class="ion-alert"></i></span> Warning</h2>
     <h3><i class="ion-pound"></i> You should make sure that</h3>
@@ -26,18 +30,10 @@
 
   <div id="doneSubmit">
     <h2>Welcome <span id="hisName"></span></h2>
-    <a href="./get-data.html">Click here to show data</a>
+    <a href="./get-data.html" onclick="test()">Click here to show data</a>
   </div>
 
   <div id="form">
-    <div id="loading">
-      <div class="loadingShape">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-
 
     <div class="placeholder">
       <span id="name-place">Name</span>
@@ -52,8 +48,10 @@
       <input id="pass" type="password">
     </div>
     <button onclick="getInputValue()">Sign in</button>
+
   </div>
 
+  <script src="./js/framework.js"></script>
   <script src="./js/post.js"></script>
 </body>
 </html>

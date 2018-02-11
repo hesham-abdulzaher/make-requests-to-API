@@ -27,6 +27,7 @@ document.querySelectorAll('input').forEach(function(input){
 
 
 
+
 // Validate Email
 function validateEmail(email){
   var syntax = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -64,7 +65,7 @@ function getInputValue(){
     warning.style.animation = 'fadeInWarning .5s ease forwards .8s'
     setTimeout(function(){
       warning.style.animation = 'fadeOutWarning .6s ease forwards'
-    }, 5000)
+    }, 7000)
     return;
   }else{ // if all of syntax is good fade Done section
     form.style.animation = 'fadeOutForm .3s ease forwards .4s'
