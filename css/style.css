@@ -241,19 +241,38 @@ body {
     margin-left: 0;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     background-color: white;
-    position: relative; }
+    position: relative;
+    display: flex;
+    flex-wrap: wrap; }
     #container .card .info {
-      line-height: 2; }
-    #container .card .deleteIcon {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%; }
+      #container .card .info label {
+        width: 17%;
+        padding: 5px 0;
+        font-size: 15px;
+        color: #aaa; }
+      #container .card .info div {
+        width: 83%;
+        padding: 5px 0; }
+    #container .card .icons {
       position: absolute;
-      top: 15%;
-      right: 5%;
-      cursor: pointer;
-      color: #130f40;
-      transition: 0.2s ease;
-      font-size: 30px; }
-      #container .card .deleteIcon:hover {
-        animation: buzzIconWarning 2s ease forwards; }
+      top: 0;
+      right: 0;
+      bottom: 0;
+      margin: 10px 15px 10px 0;
+      text-align: center; }
+      #container .card .icons i {
+        font-size: 20px;
+        display: block;
+        margin: 8px auto;
+        color: #130f40;
+        cursor: pointer; }
+        #container .card .icons i.deleteIcon {
+          font-size: 26px; }
+        #container .card .icons i:hover {
+          color: #261e80; }
   #container #popup {
     position: fixed;
     top: 0;
@@ -263,8 +282,8 @@ body {
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 2;
     display: none; }
-    #container #popup #content {
-      display: inline-block;
+    #container #popup #confirmDelete {
+      display: none;
       position: fixed;
       top: 60%;
       left: 50%;
@@ -274,10 +293,10 @@ body {
       padding: 30px;
       border-radius: 4px;
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
-      #container #popup #content p {
+      #container #popup #confirmDelete p {
         margin: 0 auto;
         font-size: 20px; }
-      #container #popup #content button {
+      #container #popup #confirmDelete button {
         padding: 10px 20px;
         width: 40%;
         margin: 25px 4% 10px;
@@ -291,8 +310,41 @@ body {
         letter-spacing: 1px;
         border: none;
         transition: 0.3s ease; }
-        #container #popup #content button:hover {
+        #container #popup #confirmDelete button:hover {
           background-color: #0a0820; }
+    #container #popup #formEdit {
+      display: none;
+      width: 400px;
+      position: fixed;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      background-color: white;
+      padding: 30px;
+      border-radius: 4px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
+      #container #popup #formEdit input {
+        width: 90%;
+        padding: 10px 15px;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+        margin: 10px auto;
+        display: block; }
+      #container #popup #formEdit button {
+        display: block;
+        padding: 10px 20px;
+        background-color: #130f40;
+        border: 2px solid #130f40;
+        margin: 20px auto;
+        color: white;
+        cursor: pointer;
+        font-size: 18px;
+        border-radius: 3px; }
+        #container #popup #formEdit button:hover {
+          background-color: white;
+          color: #130f40;
+          border: 2px dashed #130f40; }
 
 #load-layer {
   position: fixed;

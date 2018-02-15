@@ -1,9 +1,13 @@
 function deleteData(id) {
   var popup = document.getElementById('popup')
-  var contentMSG = document.getElementById('content')
+  var confirmDelete = document.getElementById('confirmDelete')
+  var formEdit = document.getElementById('formEdit');
+
   popup.style.display = 'block'
-  contentMSG.style.animation = 'fadeInContentMsg .4s ease-in-out forwards'
-  console.log(contentMSG);
+  formEdit.style.display = 'none'
+  confirmDelete.style.display = 'inline-block'
+  confirmDelete.style.animation = 'fadeInContentMsg .4s ease-in-out forwards'
+  console.log(confirmDelete);
 
   document.querySelectorAll('button').forEach(function(button){
     button.addEventListener('click', function(clickEvent){
@@ -14,6 +18,7 @@ function deleteData(id) {
   })
 
   function getIdButton(idOfButtun){
+    confirmDelete.style.display = 'none'
     if(idOfButtun == 'cancel'){
       popup.style.display = 'none'
       return;
@@ -34,9 +39,6 @@ function deleteData(id) {
       .catch(function(errorMessage){
         console.log(errorMessage);
       })
-      setTimeout(function(){
-        location.reload();
-      }, 2000)
     }
   }
 

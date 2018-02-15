@@ -96,3 +96,19 @@ function getInputValue(){
     console.log( finalResponse );
   })
 }
+
+
+fetch("https://bala7a-api.herokuapp.com/users/new", {
+    method: "PUT", // We will do a POST request to the API
+    body: JSON.stringify(newUserInfo), // We need to convert the data to JSON before sending it
+    // this is thing must be here, please ignore it
+    headers: {
+      "Content-Type": "application/json"
+    }
+})
+.then(function(res){
+  return res.json(); // Proccessing the incoming response
+})
+.then(function(finalResponse){
+  console.log( finalResponse );
+})

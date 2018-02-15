@@ -11,16 +11,21 @@
 </head>
 <body>
 
-  <div id="load-layer">
+  <!-- <div id="load-layer">
     <div id="loading"></div>
-  </div>
+  </div -->
 
   <div id="container">
     <div id="popup">
-      <div id="content">
+      <div id="confirmDelete">
         <p>Are you want to delete this user</p>
         <button id="delete">Delete</button>
         <button id="cancel">Cancel</button>
+      </div>
+      <div id="formEdit">
+        <input type="text" id="nameInpInFormEdit">
+        <input type="text" id="emailInpInFormEdit">
+        <button id="save">Save Changes</button>
       </div>
     </div>
   </div>
@@ -28,6 +33,7 @@
 
   <script src="./js/framework.js"></script>
   <script src="./js/get.js"></script>
+  <script src="./js/put.js"></script>
   <script src="./js/delete.js"></script>
 </body>
 </html>

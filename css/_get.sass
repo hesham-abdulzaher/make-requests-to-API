@@ -13,18 +13,37 @@
     box-shadow: $shadow
     background-color: white
     position: relative
+    display: flex
+    flex-wrap: wrap
     .info
-      line-height: 2
-    .deleteIcon
+      display: flex
+      flex-wrap: wrap
+      width: 100%
+      label
+        width: 17%
+        padding: 5px 0
+        font-size: 15px
+        color: #aaa
+      div
+        width: 83%
+        padding: 5px 0
+    .icons
       position: absolute
-      top: 15%
-      right: 5%
-      cursor: pointer
-      color: $mainColor
-      transition: .2s ease
-      font-size: 30px
-      &:hover
-        animation: buzzIconWarning 2s ease forwards
+      top: 0
+      right: 0
+      bottom: 0
+      margin: 10px 15px 10px 0
+      text-align: center
+      i
+        font-size: 20px
+        display: block
+        margin: 8px auto
+        color: $mainColor
+        cursor: pointer
+        &.deleteIcon
+          font-size: 26px
+        &:hover
+          color: $mainColor * 2
 
   #popup
     position: fixed
@@ -35,12 +54,8 @@
     background-color: rgba(0, 0, 0, .8)
     z-index: 2
     display: none
-    // &:hover
-    //   .content
-    //     top: 50%
-    //     opacity: 1
-    #content
-      display: inline-block
+    #confirmDelete
+      display: none
       position: fixed
       top: 60%
       left: 50%
@@ -69,3 +84,47 @@
         transition: .3s ease
         &:hover
           background-color: $mainColor / 2
+
+    #formEdit
+      display: none
+      width: 400px
+      position: fixed
+      top: 60%
+      left: 50%
+      transform: translate(-50%, -50%)
+      opacity: 0
+      background-color: white
+      padding: 30px
+      border-radius: 4px
+      box-shadow: $shadow
+      input
+        width: 90%
+        padding: 10px 15px
+        border-radius: 3px
+        border: 1px solid #ccc
+        margin: 10px auto
+        display: block
+      button
+        display: block
+        padding: 10px 20px
+        background-color: $mainColor
+        border: 2px solid $mainColor
+        margin: 20px auto
+        color: white
+        cursor: pointer
+        font-size: 18px
+        border-radius: 3px
+        &:hover
+          background-color: white
+          color: $mainColor
+          border: 2px dashed $mainColor
+
+
+
+
+
+
+
+
+
+/////////////////////////// PUT ///////////////////
