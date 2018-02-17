@@ -21,14 +21,27 @@ function editData(id, target) {
 
   function saveCahnges(id){
     popup.style.display = 'none'
+    var nameVal = document.getElementById('nameInpInFormEdit').value
+    var emailVal = document.getElementById('emailInpInFormEdit').value
+    var newUserInfo = {
+    	name: nameVal, // this should come from html input
+      email: emailVal,// and this
+    }
 
     fetch('https://bala7a-api.herokuapp.com/users/update' + '/' + id, {
-      method: 'PUT'
+      method: 'PUT',
+      body: JSON.stringify(newUserInfo),
+      headers: {
+        "Content-Type": "application/json"
+      }
     })
     .then(response =>
       response.json().then(json => {
         console.log(response); // Why this log show twice
-        return json;
+        if(response.status == 200){
+          location.reload();
+        }
+        // return json;
       })
     )
     .catch(function(errorMessage){
